@@ -1,3 +1,3 @@
 # Python DSA
- *stack 
- *queue
+ * stack 
+ * queue
