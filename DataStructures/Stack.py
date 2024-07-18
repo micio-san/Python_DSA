@@ -90,19 +90,27 @@ class Deques:
     def __init__(self, d) -> None:
         self.d= d
     def print_first(self):
-        print(self.d[0])
+        if self.get_size()>0:
+           print(self.d[0])
+        else:
+           print("stack is empty") 
     def print_last(self):
-        print(self.d[-1])
+        if self.get_size()>0:
+           print(self.d[-1])
+        else:
+           print("stack is empty") 
     def print_all(self):
         print(self.d)
     def pop(self):
-        pass
+        if self.get_size()>0:
+            self.d.pop()
     def pop_left(self):
-        pass
-    def append_left(self):
-        pass
-    def append(self):
-        return self.d.append("x")
+        if self.get_size()>0:
+            self.d.popleft()
+    def append_left(self, value):
+        return self.d.appendleft(value)
+    def append(self, value):
+        return self.d.append(value)
     def get_size(self):
         print(len(self.d))
         return len(self.d)
@@ -112,8 +120,11 @@ class Deques:
     
 
 my_deque = Deques(deque())
+
 my_deque.get_size()
-my_deque.append_left()
+my_deque.append("value")
 my_deque.get_size()
+my_deque.append_left("valueFirst")
 my_deque.print_first()
+my_deque.pop_left()
 my_deque.print_all()
