@@ -1,4 +1,4 @@
-#decklare stack
+#declare stack
 #push
 # push()pop()peek()isEmpty()size()
 
@@ -10,19 +10,21 @@ def push(stack):
     value = input("Add something: ")
     stack.insert(len(stack), value)
 
-def pop(stack, len):
-    pass
+def pop(self, len):
+    if(self.is_empty()):
+        print("Stack is empty!")  
+    else:
+        el = self.stack[self.get_size()-1]
+        self.stack= self.stack[:self.get_size()-1]  
 
 def peek(stack, len):
-    print(stack[len -1]) 
+    return stack[len -1]
 
 def is_empty(stack):
     value= True if len(stack) == 0 else False
-    print(value)
     return value
 
 def size(stack):
-    print(f"{len(stack)}")
     return len(stack)
 
 def print_all(stack):
@@ -54,7 +56,6 @@ class Stack:
     
     def is_empty(self):
         val = True if len(self.stack) == 0 else False
-        print(val)
         return val
     
     def get_size(self):
@@ -62,7 +63,7 @@ class Stack:
     
     def push(self, value):
         self.stack.insert(self.get_size(), value)
-        print(self.stack)
+        return self.stack
     
     def print_all(self):
         print(" | ".join(self.stack))
@@ -74,24 +75,45 @@ class Stack:
          el = self.stack[self.get_size()-1]
          self.stack= self.stack[:self.get_size()-1]   
                    
-        
-
-
-
-my_stack = Stack([], 5)
-my_stack.is_empty()  
-for _ in range(3):
-    value = input("Add something: ")
-    my_stack.push(value)
-my_stack.is_empty() 
-my_stack.print_all() 
-my_stack.pop()
-my_stack.print_all() 
-my_stack.pop()
-my_stack.print_all() 
-my_stack.pop()
-my_stack.print_all() 
-my_stack.pop()
-my_stack.print_all() 
 
 #deque
+
+# A deque (Doubly Ended Queue) is part of the collections module, it looks the same as a list, but it is faseter in 
+# adding elemnts to the end and beginning, it has a time complexity of
+#O(1) 
+
+from collections import deque
+
+
+
+class Deques:
+    def __init__(self, d) -> None:
+        self.d= d
+    def print_first(self):
+        print(self.d[0])
+    def print_last(self):
+        print(self.d[-1])
+    def print_all(self):
+        print(self.d)
+    def pop(self):
+        pass
+    def pop_left(self):
+        pass
+    def append_left(self):
+        pass
+    def append(self):
+        return self.d.append("x")
+    def get_size(self):
+        print(len(self.d))
+        return len(self.d)
+
+
+        
+    
+
+my_deque = Deques(deque())
+my_deque.get_size()
+my_deque.append_left()
+my_deque.get_size()
+my_deque.print_first()
+my_deque.print_all()
