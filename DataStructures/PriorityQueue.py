@@ -4,6 +4,7 @@
 
 #list with insert item, remove maximum element, find maximum element(peek), check if empty
 
+import sys
 
 class Element:
     def __init__(self, value, priority) -> None:
@@ -25,20 +26,45 @@ class PriorityQueue:
       PriorityQueue.index +=1
       element = Element(argv[1],argv[0])
       self.queue.insert(self.index, element)
+    
+    def get_size(self):
+        return len(self.queue)
 
     def get_maximum_element(self):
         pass
+
     def is_empty(self):
         pass
+
     def find_max(self):
-        pass
+        temp = -1
+        i=-1
+        index = 0
+        if self.get_size()>0:
+          while index < self.get_size():
+            if temp < self.queue[index].priority:
+               temp=self.queue[index].priority
+               i=index
+               print("m")
+            else:
+               print("k")
+            index +=1
+          print(self.queue[i].value)
+          return i
+        else:
+            print("nothing to remove")
+
     def main(self):
         pass
 
 
 
 priority_queue= PriorityQueue([])
+
 priority_queue.insertNew(4,"miao")
 priority_queue.__repr__()
-priority_queue.insertNew(2,"tretatretr")
+priority_queue.insertNew(10,"tretatretr")
 priority_queue.__repr__()
+priority_queue.insertNew(19,"tre")
+priority_queue.insertNew(2,"bau")
+priority_queue.find_max()
