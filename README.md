@@ -1,4 +1,5 @@
 # Python DSA
- * stack 
- * queue
+ * Stack 
+ * Queue
  * Priority queue
+ * Linked list
