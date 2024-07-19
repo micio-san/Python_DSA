@@ -31,40 +31,55 @@ class PriorityQueue:
         return len(self.queue)
 
     def get_maximum_element(self):
-        pass
+        index = self.find_max()
+        element = self.queue[index]
+        del self.queue[index]
+        self.__repr__()
+        return element
 
     def is_empty(self):
-        pass
+        True if PriorityQueue.index== -1 else False
 
     def find_max(self):
-        temp = -1
-        i=-1
-        index = 0
-        if self.get_size()>0:
-          while index < self.get_size():
-            if temp < self.queue[index].priority:
-               temp=self.queue[index].priority
-               i=index
-               print("m")
-            else:
-               print("k")
-            index +=1
-          print(self.queue[i].value)
-          return i
-        else:
-            print("nothing to remove")
-
+      temp=-sys.maxsize
+      i=0
+      index_to_return=-1
+      while PriorityQueue.index > i:
+          if self.queue[i].priority >= temp:
+              temp= self.queue[i].priority
+              index_to_return=i
+          i+=1
+      return index_to_return
+    
     def main(self):
-        pass
+        self.insertNew(4,"miao")
+        self.__repr__()
+        self.insertNew(10,"tretatretr")
+        self.__repr__()
+        self.insertNew(21,"tre")
+        self.insertNew(19,"trent")
+        self.insertNew(2,"bau")
+        self.get_maximum_element()
 
 
 
-priority_queue= PriorityQueue([])
+if __name__=="__main__":
+  priority_queue= PriorityQueue([])
+  priority_queue.main()
 
-priority_queue.insertNew(4,"miao")
-priority_queue.__repr__()
-priority_queue.insertNew(10,"tretatretr")
-priority_queue.__repr__()
-priority_queue.insertNew(19,"tre")
-priority_queue.insertNew(2,"bau")
-priority_queue.find_max()
+    #    tempPriority = -1
+    #     i=-1
+    #     index = 0
+    #     if self.get_size()>0:
+    #       while index < self.get_size():
+    #         if tempPriority < self.queue[index].priority:
+    #            tempPriority=self.queue[index].priority
+    #            i=index
+    #         elif :
+    #            print("k")
+    #         index +=1
+    #       print(self.queue[i].value)
+    #       return i
+    #     else:
+    #         print("nothing to remove")
+
