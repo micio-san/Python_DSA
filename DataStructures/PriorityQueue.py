@@ -67,19 +67,4 @@ if __name__=="__main__":
   priority_queue= PriorityQueue([])
   priority_queue.main()
 
-    #    tempPriority = -1
-    #     i=-1
-    #     index = 0
-    #     if self.get_size()>0:
-    #       while index < self.get_size():
-    #         if tempPriority < self.queue[index].priority:
-    #            tempPriority=self.queue[index].priority
-    #            i=index
-    #         elif :
-    #            print("k")
-    #         index +=1
-    #       print(self.queue[i].value)
-    #       return i
-    #     else:
-    #         print("nothing to remove")
 
