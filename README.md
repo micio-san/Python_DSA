@@ -1,4 +1,6 @@
 # Python DSA
- * stack 
- * queue
+## Data structures:
+ * Stack 
+ * Queue
  * Priority queue
+ * Linked list
