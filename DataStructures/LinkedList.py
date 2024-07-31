@@ -11,7 +11,7 @@ class Linked_List:
     def __init__(self) -> None:
         #the head node is never gonna contain any actual data and will never be indexable, it's just a placeholder to point to the 1st Node in the list
         #this is not going to be one of the data nodes, it has no info.
-        self.head=Node()
+        self.head=Node() 
 
     def append(self,data):
         #we create the first node, pass the data in it the create the holder to the current Node, which in the first iteration is the head_node
@@ -25,9 +25,9 @@ class Linked_List:
         curr.next=new_node
     
     def length(self):
-        current=self.head
+        curr=self.head
         total_nodes=0
-        while current.next != None:
+        while curr.next != None:
             total_nodes += 1
             curr = curr.next
         return total_nodes
@@ -50,8 +50,21 @@ class Linked_List:
               curr_node= curr_node.next
               if curr_idx == idx:
                    return curr_node.data
-              else:
-                   curr_idx += 1
+              curr_idx += 1
+
+    def del_node(self, idx):
+        if idx >= self.length():
+             print("error, index our of range")
+             return None
+        curr_idx=0
+        curr_node=self.head
+        while True:
+             last_node= curr_node
+             curr_node= curr_node.next
+             if curr_idx == idx:
+                   last_node.next= curr_node.next
+                   return
+             curr_idx +=1
 
 my_list= Linked_List()
 my_list.display_content()
@@ -60,4 +73,6 @@ my_list.append("xD xD")
 my_list.append("cats")
 my_list.append(" miao miao miao")
 my_list.display_content()
-
+at_index= my_list.get(3)
+my_list.del_node(3)
+my_list.display_content()
