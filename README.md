@@ -4,4 +4,4 @@
  * Queue
  * Priority queue
  * Linked list
-  - Sub Linked list exercises
+- Linked list exercises
