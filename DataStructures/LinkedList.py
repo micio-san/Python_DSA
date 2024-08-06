@@ -1,5 +1,46 @@
-#A linked list is a way to stor data oot linearly in memory, where every element contains it's data and a pointer to the next element in it
+#A linked list is a way to store data linearly in memory, where every element contains it's data and a pointer to the next element in it,
 # which are called nodes, it's storage capacity is dynamic and allocated at runtime, it's maximum size depends on heap.
+
+#example for stupid people (i.e: me)
+
+class MyNodeEl:
+     def __init__(self, data) -> None:
+          self.data=data
+          self.next = None
+
+class ThisIsTheList:
+    def __init__(self, first=None) -> None:
+         #Punto di ingresso alla linked list
+         self.head=first
+    def get_size(self):
+         idx=0;
+         while self.head.next != None:
+              idx +=1
+              self.head = self.head.next
+         return idx
+    def get_last(self):
+         while self.head.next != None:
+              self.head=self.head.next
+         else:
+              return self.head.data
+    def get_first(self):
+         print(self.head.data)
+         return self.head
+    
+
+node1= MyNodeEl("prima")
+node2=MyNodeEl("seconda")
+node1.next=node2
+node3=MyNodeEl("terza")
+node2.next=node3
+lista= ThisIsTheList(node1)
+#printa il valore 2
+print(lista.head.next.data)
+print(lista.get_size())
+print(lista.get_last())
+print("prina", lista.get_first())
+
+
 
 class Node:
     def __init__(self, data=None) -> None:
@@ -66,13 +107,7 @@ class Linked_List:
                    return
              curr_idx +=1
 
-my_list= Linked_List()
-my_list.display_content()
-my_list.append("my list")
-my_list.append("xD xD")
-my_list.append("cats")
-my_list.append(" miao miao miao")
-my_list.display_content()
-at_index= my_list.get(3)
-my_list.del_node(3)
-my_list.display_content()
+class NodeTwo:
+     def __init__(self) -> None:
+          pass
+
