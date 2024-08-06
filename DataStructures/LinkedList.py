@@ -24,8 +24,7 @@ class ThisIsTheList:
          else:
               return self.head.data
     def get_first(self):
-         print(self.head.data)
-         return self.head
+         return self.head.data
     
 
 node1= MyNodeEl("prima")
@@ -34,13 +33,6 @@ node1.next=node2
 node3=MyNodeEl("terza")
 node2.next=node3
 lista= ThisIsTheList(node1)
-#printa il valore 2
-print(lista.head.next.data)
-print(lista.get_size())
-print(lista.get_last())
-print("prina", lista.get_first())
-
-
 
 class Node:
     def __init__(self, data=None) -> None:
@@ -106,8 +98,4 @@ class Linked_List:
                    last_node.next= curr_node.next
                    return
              curr_idx +=1
-
-class NodeTwo:
-     def __init__(self) -> None:
-          pass
 
