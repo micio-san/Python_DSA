@@ -23,8 +23,44 @@ class Linked_List:
         current_node.next=new_node
         new_node.next=container_for_current_next
 
+    def insert_at_idx(self, idx, data):
+        index=0
+        current_node=self.head
+        new_node=Node(data)
+        if idx>self.size():
+           print("wrong!")
+        else:
+            while current_node.next is not None:
+                prev= current_node
+                index +=1
+                current_node=current_node.next
+                if index == idx:
+                    prev.next=new_node
+                    new_node.next=current_node
+                 
+
     def remove_at_end(self):
-        pass
+        current_node= self.head
+        while current_node.next is not None:
+            current_node=current_node.next
+        del current_node
+
+    def remove_at_start(self):
+        self.head=self.head.next
+    
+    def remove_at_idx(self, idx):
+        current_node=self.head
+        index=0
+        if idx>self.size():
+           print("wrong!")
+        else:
+            while current_node.next is not None:
+               prev= current_node
+               index +=1
+               current_node=current_node.next
+               if index == idx:
+                   prev.next= current_node.next
+
 
     def transverse(self):
         container=[]
@@ -54,15 +90,37 @@ class Linked_List:
         while current_node.next is not None:
             current_node=current_node.next
         return current_node.data
+    
+    def search_by_idx(self, idx):
+        current_node=self.head
+        index=0
+        if idx>self.size():
+            print("wrong!")
+        else:
+            while current_node.next is not None:
+                index +=1
+                current_node=current_node.next
+                if index == idx:
+                    print("by idx ", current_node.data)
+            
 
 my_list = Linked_List()
 my_list.insert_at_end("prima")
 my_list.insert_at_end("seconda")
 my_list.transverse()
 my_list.insert_at_end("terza")
+my_list.insert_at_end("quarta")
+my_list.insert_at_end("quinta")
 my_list.transverse()
 print(my_list.size())
 print(my_list.get_first_item())
 my_list.insert_at_start("zero")
 my_list.transverse()
 print("last",my_list.get_last_item())
+my_list.transverse()
+my_list.search_by_idx(4)
+my_list.remove_at_end()
+my_list.insert_at_idx(3, "tre e mezzo")
+my_list.transverse()
+my_list.remove_at_idx(7)
+my_list.transverse()
