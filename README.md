@@ -5,4 +5,3 @@
  * Priority queue
  * Linked list
     * Linked list exercises
- * Doubly Linked list
