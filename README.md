@@ -5,4 +5,5 @@
  * Priority queue
  * Linked list
     * Linked list exercises
- * Binary Tree 
+ * Tree
+   * General tree
