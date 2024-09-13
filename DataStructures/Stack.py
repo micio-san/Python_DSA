@@ -84,8 +84,6 @@ class Stack:
 
 from collections import deque
 
-
-
 class Deques:
     def __init__(self, d) -> None:
         self.d= d
