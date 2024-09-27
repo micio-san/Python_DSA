@@ -7,3 +7,4 @@
     * Linked list exercises
  * Tree
    * General tree
+   * Binary Tree
