@@ -84,34 +84,4 @@ def buid_product_tree():
 
 #exercise
 
-class Node:
-    def __init__(self, data) -> None:
-       super().__init__()
-       self.data= data
-    #    self.parent=None
-       self.children = []
-
-class Tri:
-    def __init__(self) -> None:
-        super().__init__()
-        self.root=None
-    def add_node(self, data, mom):
-        new_node= Node(data)
-        if mom is None:
-            mom= new_node
-            self.root=mom
-        else:
-            mom.children.append(new_node)
-
-    def tri_pint(self):
-        print(self.root.data)
-    
-tre =  Tri()
-eh = Node(1)
-tre.add_node(eh, None)
-tre.tri_pint()
         
-
-
-
-
