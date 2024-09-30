@@ -9,4 +9,5 @@
    * General tree
    * Binary Tree
     * Binary Tree exercises
-       * tree includes 
+       * tree includes
+       * tree sum
